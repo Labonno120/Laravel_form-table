@@ -4,7 +4,7 @@
             {{ __('Create Product') }}
         </h2>
     </x-slot>
- 
+
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
@@ -13,59 +13,56 @@
                     <hr />
                     @if (session()->has('error'))
                     <div>
-                        {{session('error')}}
+                        {{ session('error') }}
                     </div>
                     @endif
                     <p><a href="{{ route('admin/products') }}" class="btn btn-primary">Go Back</a></p>
- 
+
                     <form action="{{ route('admin/products/save') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="row mb-3">
                             <div class="col">
-                                <input type="text" name="title" class="form-control" placeholder="Title">
+                                <input type="text" name="title" class="form-control text-center w-50 mx-auto border-2 shadow-lg" placeholder="Title">
                                 @error('title')
-                                <span class="text-danger">{{$message}}</span>
+                                <span class="text-danger">{{ $message }}</span>
                                 @enderror
                             </div>
                         </div>
                         <div class="row mb-3">
                             <div class="col">
-                                <input type="text" name="category" class="form-control" placeholder="Category">
+                                <input type="text" name="category" class="form-control text-center w-50 mx-auto border-2 shadow-lg" placeholder="Category">
                                 @error('category')
-                                <span class="text-danger">{{$message}}</span>
+                                <span class="text-danger">{{ $message }}</span>
                                 @enderror
                             </div>
                         </div>
                         <div class="row mb-3">
                             <div class="col">
-                                <input type="text" name="price" class="form-control" placeholder="Price">
+                                <input type="text" name="price" class="form-control text-center w-50 mx-auto border-2 shadow-lg" placeholder="Price">
                                 @error('price')
-                                <span class="text-danger">{{$message}}</span>
+                                <span class="text-danger">{{ $message }}</span>
                                 @enderror
                             </div>
                         </div>
- 
-
-                     <div class="row mb-3">
+                        <div class="row mb-3">
                             <div class="col">
-                                <input type="text" name="discount" class="form-control" placeholder="Discount">
+                                <input type="text" name="discount" class="form-control text-center w-50 mx-auto border-2 shadow-lg" placeholder="Discount">
                                 @error('discount')
-                                <span class="text-danger">{{$message}}</span>
+                                <span class="text-danger">{{ $message }}</span>
                                 @enderror
                             </div>
                         </div>
-
-                    <div class="row mb-3">
+                        <div class="row mb-3">
                             <div class="col">
-                                <input type="text" name="stock" class="form-control" placeholder="Stock">
+                                <input type="text" name="stock" class="form-control text-center w-50 mx-auto border-2 shadow-lg" placeholder="Stock">
                                 @error('stock')
-                                <span class="text-danger">{{$message}}</span>
+                                <span class="text-danger">{{ $message }}</span>
                                 @enderror
                             </div>
                         </div>
                         <div class="row">
                             <div class="d-grid">
-                                <button class="btn btn-primary">Submit</button>
+                                <button class="btn btn-primary w-25 mx-auto shadow-lg">Submit</button>
                             </div>
                         </div>
                     </form>
